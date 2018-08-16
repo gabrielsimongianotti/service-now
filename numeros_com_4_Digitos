@@ -2,13 +2,13 @@ function onChange(control, oldValue, newValue, isLoading) {
     if (isLoading || newValue == '') {
           return;
     }
-	var regExTest = /^[0-9]*$/;    
-	var ano = g_form.getValue('qual_o_ano');
+	var informacao = /^[0-9]*$/;    
+	var numero = g_form.getValue('qual_o_ano');
 		//verifica se a variavel possui letras
-		if (!regExTest.test (newValue)){
+		if (!informacao.test (newValue)){
 			g_form.addErrorMessage('<b>Por favor, introduza números. Apenas números são permitidos</b>');
 		}
-		else if(ano.length != 4){
+		else if(numero.length != 4){
 			g_form.addErrorMessage('<b>somente numeros com 4 Digitos</b>');
 		}
 }
