@@ -1,0 +1,17 @@
+//torna campos Checkbox obrigatorios  
+function onSubmit() {
+	var amarelo = g_form.getValue('amarelo');
+	var ciano = g_form.getValue('ciano');
+	var magenta = g_form.getValue('magenta');
+	var preto = g_form.getValue('preto');
+	var o_que_deseja_solicitar = g_form.getValue('o_que_deseja_solicitar');
+	
+	if(amarelo == 'false' && ciano == 'false' && magenta == 'false' && preto == 'false' && o_que_deseja_solicitar == 'Novo_Tonner' ){
+		g_form.addErrorMessage('<b>Por favor,escolha uma cor</b>');
+		//impede que as avance
+		return false;
+	}else {
+		//permite que avance
+		return true;
+	}
+}
