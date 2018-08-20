@@ -1,0 +1,12 @@
+function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+var ddd = g_form.getValue('informe_o_ddd');
+
+	ddd = ddd.replace(/\D/g,""); //Remove tudo o que não é dígito
+	ddd = ddd.replace(/^(\d{2})(\d)/g,"($1) $2");//Coloca parênteses em volta dos dois primeiros dígitos
+	ddd = ddd.replace(/(\d)(\d{4})$/,"$1-$2");//Coloca hífen entre o quarto e o quinto dígitos
+	
+  g_form.setValue('informe_o_ddd',ddd);//antera o valor do campo
+	
