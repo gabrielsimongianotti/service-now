@@ -1,0 +1,11 @@
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+    var informacao = /^[0-9]*$/;
+    //verifica se a variavel possui letras
+    if (!informacao.test (newValue)){
+        //deixa o campo em branco
+        g_form.setValue('campo','');
+    }
+}
