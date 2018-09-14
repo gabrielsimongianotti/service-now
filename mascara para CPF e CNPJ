@@ -1,0 +1,14 @@
+ function onChange(control, oldValue, newValue, isLoading) {
+	if (isLoading || newValue == '' || oldValue == newValue) {
+		return;
+	}
+	 
+	var validate = formata_cpf_cnpj(newValue);
+	if (validate) {
+		g_form.setValue("cpf", validate);
+	} else {
+		g_form.setValue("cpf", "");
+		g_form.showErrorBox("cpf", "CPF inválido");
+		
+	}
+}
