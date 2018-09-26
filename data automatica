@@ -1,0 +1,13 @@
+function onLoad() {
+   //Type appropriate comment here, and begin script below
+   	var data = new Date();
+	var mes=   data.getMonth()+1;
+	var valor;
+	if(mes<10){
+		 valor = data.getDate()+"/"+"0"+mes+"/"+data.getFullYear();
+	}
+	else{
+		valor = data.getDate()+"/"+mes+"/"+data.getFullYear();
+	}
+	g_form.setValue("campo", valor);
+}
