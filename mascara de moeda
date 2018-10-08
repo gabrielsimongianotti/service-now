@@ -2,7 +2,7 @@ function onChange(control, oldValue, newValue, isLoading) {
 	if (isLoading || newValue == '') {
 		return;
 	}
-	informacao = g_form.getValue('informe_o_valor_do_troco_solicitado');
+	informacao = g_form.getValue('valor');
 		
 	informacao=informacao.replace(/\D/g,""); //permite digitar apenas números
 		
@@ -10,6 +10,11 @@ function onChange(control, oldValue, newValue, isLoading) {
 					
 	informacao=informacao.replace(/(\d{1})(\d{1,2})$/,"$1,$2"); //coloca virgula antes dos últimos 2 digitos
 						
-	g_form.setValue('informe_o_valor_do_troco_solicitado',"R$"+informacao);
-						
+	
+	if (informacao!= ""){
+		g_form.setValue('valor',"R$ "+informacao);
+		return;
+	}
+	
+	g_form.setValue('valor',informacao);
 }
