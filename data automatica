@@ -1,5 +1,5 @@
 function onLoad() {
-	alert(Data());
+	 g_form.setValue("date",Data());
 }
 
 function Data() {
